@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name="Chitaemsss", urlPatterns="/Chitaem") //связывание сервлета с URL
+@WebServlet(name="Chitaemsss", urlPatterns="/Chitaem") //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ URL
 public class ReadFile extends HttpServlet {
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestCalc Calc = RequestCalc.fromRequestParameters(request);
 		Calc.setAsRequestAttributesAndCalculate(request);
-		request.getRequestDispatcher("/Form.jsp").forward(request, response);
+        request.getRequestDispatcher("/Form.jsp").forward(request, response);
 	}
 	static String num[] = new String[10];
 	private static class RequestCalc {

@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name="Calc1", urlPatterns="/Kolek") //связывание сервлета с URL
+@WebServlet(name="Calc1", urlPatterns="/Kolek") //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ URL
 public class Bebob extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestCalc Calc = RequestCalc.fromRequestParameters(request);
 		Calc.setAsRequestAttributesAndCalculate(request);
-		request.getRequestDispatcher("/Form.jsp").forward(request, response);
+		response.sendRedirect(request.getContextPath());
 	}
 	static String num[] = new String[10];
 	private static class RequestCalc {
@@ -77,11 +77,11 @@ public class Bebob extends HttpServlet {
 		String kek3 = num[2];
 		String kek4 = num[3];
 		String kek5 = num[4];
-		request.setAttribute("keken1", kek1);
+	/*	request.setAttribute("keken1", kek1);
 		request.setAttribute("keken2", kek2);
 		request.setAttribute("keken3", kek3);
 		request.setAttribute("keken4", kek4);
-		request.setAttribute("keken5", kek5); 
+		request.setAttribute("keken5", kek5);  */
 	}
 }
 }

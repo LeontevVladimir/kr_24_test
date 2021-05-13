@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -36,11 +37,11 @@ function myFunction5(e) {
 <label style="position:relative;left: 45%">Вид стула:</label>
 		<select id="kk" name="VidStula" required onchange="myFunction1(event);" style="position:relative;left: 45%">
     <option selected disabled =""></option>
-    <option value=${ keken1 }>Игровое кресло</option>
-    <option value=${ keken2 }>Офисное кресло</option>
-    <option value=${ keken3 }>Пуфик</option>
-    <option value=${ keken4 }>Кресло-качалка</option>
-    <option value=${ keken5 }>Стул с мягкой спинкой</option>
+    <option value="${ keken1 }">Игровое кресло</option>
+    <option value="${ keken2 }">Офисное кресло</option>
+    <option value="${ keken3 }">Пуфик</option>
+    <option value="${ keken4 }">Кресло-качалка</option>
+    <option value="${ keken5 }">Стул с мягкой спинкой</option>
    </select>
   <p><label style="position:relative;left: 34%;">Материал каркаса:</label>
 		<select name="priceKarkas" required onchange="myFunction2(event);"  style="position:relative;left: 34%;width:8%">
@@ -85,8 +86,9 @@ function myFunction5(e) {
 	<form action="${pageContext.request.contextPath}/Spravka.jsp" method="post">
 	<input style="position:relative;left: 45%" type="submit" value=" Справка ">
 	</form>
-	<form action="${pageContext.request.contextPath}/Chitaem" method="post">
+	<form action="${pageContext.request.contextPath}/Test" method="post">
 	<input style="position:relative;left: 45%" type="submit" value="Read">
 	</form>
+	<a href="<c:url value='/logout' />" style="position:relative;left: 45%">Logout</a>
 	</body>
 </html>
