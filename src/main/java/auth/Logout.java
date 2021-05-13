@@ -21,7 +21,7 @@ public class Logout extends HttpServlet {
         session.removeAttribute("login");
         session.removeAttribute("role");
 
-        resp.sendRedirect(req.getContextPath() + "/login.jsp");
+        resp.sendRedirect("/");
     }
 
 }

@@ -89,6 +89,6 @@ function myFunction5(e) {
 	<form action="${pageContext.request.contextPath}/Test" method="post">
 	<input style="position:relative;left: 45%" type="submit" value="Read">
 	</form>
-	<a href="<c:url value='/logout' />" style="position:relative;left: 45%">Logout</a>
+	<a href="<c:url value='/logout' />" style="position:relative;left: 45%" >Logout</a>
 	</body>
 </html>
