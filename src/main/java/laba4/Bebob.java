@@ -17,7 +17,7 @@ public class Bebob extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestCalc Calc = RequestCalc.fromRequestParameters(request);
 		Calc.setAsRequestAttributesAndCalculate(request);
-		response.sendRedirect(request.getContextPath());
+		response.sendRedirect(request.getContextPath() + "/admin_menu.jsp");
 	}
 	static String num[] = new String[10];
 	private static class RequestCalc {

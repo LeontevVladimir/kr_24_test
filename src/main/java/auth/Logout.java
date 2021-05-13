@@ -3,11 +3,11 @@ package auth;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 public class Logout extends HttpServlet {
 
     @Override
@@ -21,7 +21,7 @@ public class Logout extends HttpServlet {
         session.removeAttribute("login");
         session.removeAttribute("role");
 
-        resp.sendRedirect(req.getServerName());
+        resp.sendRedirect(req.getServerName()+"/login.jsp");
     }
 
 }
