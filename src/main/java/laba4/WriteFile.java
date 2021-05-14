@@ -14,12 +14,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import AbstractClass.Karkas;
 
-@WebServlet(name="Calc1", urlPatterns="/WriteFile") 
+@WebServlet(name="WriteFile", urlPatterns="/WriteFile") 
 public class WriteFile extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestCalc Calc = RequestCalc.fromRequestParameters(request);
 		Calc.setAsRequestAttributesAndCalculate(request);
-		response.sendRedirect("/admin_menu.jsp");
+		response.sendRedirect(request.getContextPath() + "/admin_menu.jsp");
 	}
 	static String num[] = new String[20];
 	private static class RequestCalc {
