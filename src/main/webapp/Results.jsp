@@ -24,6 +24,8 @@
 <form action="${pageContext.request.contextPath}/Read" method="post">
 	<input type="submit" name="sign" value="Назад">
 	</form>
+	<a href="Check.pdf"> Open PDF-file</a>	
+<a href="Check.pdf" download> Download PDF-file</a>
 <a href="<c:url value='/logout' />" style="position:relative;left: 45%">Logout</a>
 </body>
 </html> 

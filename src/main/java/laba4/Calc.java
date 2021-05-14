@@ -19,12 +19,28 @@ import AbstractClass.Vidstul;
 
 @WebServlet(name="Calc", urlPatterns="/JavaCalc") //связывание сервлета с URL
 public class Calc extends HttpServlet {
+	
+	public static String KarkasGet;
+	public static String KarkasGetPrice;
+	public static String ObivkaGet;
+	public static String ObivkaGetPrice;
+	public static String NapolnitelGet;
+	public static String NapolnitelGetPrice;
+	public static String KolvoChairGet;
+	public static String ChairGet;
+	public static String ChairGetPrice;
+	public static String check1Get;
+	public static String Summa;
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestCalc Calc = RequestCalc.fromRequestParameters(request);
 		Calc.setAsRequestAttributesAndCalculate(request);
 		request.getRequestDispatcher("/Results.jsp").forward(request, response);
+		
+		CreatePDF PDF = new CreatePDF();
+		String goals = "Hello";
+		PDF.Create(goals);
 	}
-	
 	private static class RequestCalc {
 		private final String cenaKarkas;
 		private final String cenaObivka;
@@ -35,7 +51,6 @@ public class Calc extends HttpServlet {
 		private final String vidStula2;
 		private String result;
 		private double result1;
-		
 		private String karkas1;
 		private String stul1;
 		private String obivka1;
@@ -155,6 +170,19 @@ public class Calc extends HttpServlet {
 			result1=(Kark+CenaObivki+PriceOne)*Kolvo;
 			result = "" + result1;
 			request.setAttribute("result", result);
+			
+			KarkasGet=karkas1;
+			KarkasGetPrice=cenaKarkas;
+			ObivkaGetPrice=cenaObivka;
+			ObivkaGet=obivka1;
+			NapolnitelGet=napolnitel1;
+			NapolnitelGetPrice=cenaNapolnitel;
+			KolvoChairGet=KolvoChair;
+			ChairGetPrice=cenaOneChair;
+			ChairGet=stul1;
+			check1Get=check1;
+			Summa=result;
+			
 		}
 		
 	}
