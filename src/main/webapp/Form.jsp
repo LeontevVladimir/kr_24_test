@@ -56,11 +56,11 @@ function myFunction5(e) {
     <p><label style="position:relative;left: 34%">Материал обивки:</label>
 		<select name="priceObivka" required onchange="myFunction3(event);" style="position:relative;left: 34%;width:8%" >
     <option selected disabled =""></option>
-    <option value="${ obiv1 }">Искусственная кожа</option>
-    <option value="${ obiv2 }">Эко-кожа</option>
-    <option value="${ obiv3 }">Ткань</option>
-    <option value="${ obiv4 }">Замша</option>
-    <option value="${ obiv5 }">Вельвет</option>
+   <option value="${ obiv1 }">Искусственная кожа</option>
+   <option value="${ obiv2 }">Эко-кожа</option>
+   <option value="${ obiv3 }">Ткань</option>
+   <option value="${ obiv4 }">Замша</option>
+   <option value="${ obiv5 }">Вельвет</option>
    </select> 
    <label style="position:relative;left: 35%">Стоимость материала обивки:</label>
 		<input id="priceObivka" readonly size="15" style="position:relative;left:35%">
@@ -82,13 +82,12 @@ function myFunction5(e) {
 <p><label style="position:relative;left: 41.5%">Срочный заказ:</label>
         <input type ="checkbox" onclick="myFunction5(event);" id="checkbox_check" name="check" style="position:relative;left: 41.5%"> </p>
 	<input style="position:relative;left: 45%" type="submit" value=" Рассчитать ">
+	<input style="position:relative;left: 66%" name = "CheChe" value="${CheckCheck}">
+	<input style="position:relative;left: 66%" name = "CheChe1" value="${CheckCheck1}">
 	</form>
 	<form action="${pageContext.request.contextPath}/Spravka.jsp" method="post">
 	<input style="position:relative;left: 45%" type="submit" value=" Справка ">
 	</form>
-	<form action="${pageContext.request.contextPath}/Test" method="post">
-	<input style="position:relative;left: 45%" type="submit" value="Read">
-	</form>
-	<a href="<c:url value='/logout' />" style="position:relative;left: 45%" >Logout</a>
+	<a href="<c:url value='/logout' />" style="position:relative;left: 45%">Logout</a>
 	</body>
 </html>

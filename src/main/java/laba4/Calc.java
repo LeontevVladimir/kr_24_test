@@ -16,6 +16,7 @@ import AbstractClass.Karkas;
 import AbstractClass.Napolnitel;
 import AbstractClass.Obivka;
 import AbstractClass.Vidstul;
+import auth.Filtrator;
 
 @WebServlet(name="Calc", urlPatterns="/JavaCalc") //связывание сервлета с URL
 public class Calc extends HttpServlet {
@@ -35,11 +36,17 @@ public class Calc extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestCalc Calc = RequestCalc.fromRequestParameters(request);
 		Calc.setAsRequestAttributesAndCalculate(request);
-		request.getRequestDispatcher("/Results.jsp").forward(request, response);
-		
+			if (request.getSession().getAttribute("loginUSER") == "user") {
+			request.getRequestDispatcher("/Results.jsp").forward(request, response);
+			}
+			else {
+				request.setAttribute("zalogintes", "Пожалуйста, пройдите авторизацию");
+				response.sendRedirect(request.getContextPath() + "/");
+			}
 		CreatePDF PDF = new CreatePDF();
 		String goals = "Hello";
 		PDF.Create(goals);
+	
 	}
 	private static class RequestCalc {
 		private final String cenaKarkas;
@@ -182,7 +189,6 @@ public class Calc extends HttpServlet {
 			ChairGet=stul1;
 			check1Get=check1;
 			Summa=result;
-			
 		}
 		
 	}

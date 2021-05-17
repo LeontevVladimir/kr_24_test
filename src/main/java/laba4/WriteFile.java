@@ -17,9 +17,14 @@ import AbstractClass.Karkas;
 @WebServlet(name="WriteFile", urlPatterns="/WriteFile") 
 public class WriteFile extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestCalc Calc = RequestCalc.fromRequestParameters(request);
-		Calc.setAsRequestAttributesAndCalculate(request);
-		response.sendRedirect(request.getContextPath() + "/admin_menu.jsp");
+		if (request.getSession().getAttribute("loginADMIN") == "admin") {
+			RequestCalc Calc = RequestCalc.fromRequestParameters(request);
+			Calc.setAsRequestAttributesAndCalculate(request);
+		    response.sendRedirect(request.getContextPath() + "/admin_menu.jsp");
+			}
+			else {
+				request.getRequestDispatcher("/NotAuth.jsp").forward(request, response);
+			}
 	}
 	static String num[] = new String[20];
 	private static class RequestCalc {

@@ -18,6 +18,7 @@ public class DataBase implements ServletContextListener {
     public void contextInitialized(ServletContextEvent servletContextEvent) {
 
         useres = new AtomicReference<>(new UserPut());
+
         useres.get().add(new User("Ruslan", "chunchunmaru", ADMIN));
         useres.get().add(new User("Egor", "amidamaru", ADMIN));
         useres.get().add(new User("Vova", "12345qwerty", ADMIN));
