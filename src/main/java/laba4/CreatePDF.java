@@ -16,75 +16,56 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 
 public class CreatePDF {
-
-	  public CreatePDF() {
+	
+	 public String filepath;
+		
+	    public CreatePDF() {
 	    	
 	    }
 	    public void Create(String numberpdf) throws IOException {
 	      	
-	    	Document document = new Document(); //ñîçäàíèå êëàññà Document
-	    	
-	    	String filepath = new File("").getCanonicalPath();
-			String[] parsfilepath = filepath.split("/");
-			
-			int lengthpath = parsfilepath.length;
-			String abspath=""; 
-			for(int i=0;i<(lengthpath-1);i++) {
-				abspath=abspath+parsfilepath[i]+"/";
-			}
-			filepath=abspath+"fonts/Check.pdf";
-			String fontpath =abspath+"/webapps/CreatePDF/fonts/times.ttf";
-	    	
-			try {	
+	    	Document document = new Document(); //создание класса Document
+			try {
+				
+				filepath = new File("").getCanonicalPath();
+				/*String[] parsfilepath = filepath.split("/");
+				
+				int lengthpath = parsfilepath.length;
+				String abspath=""; 
+				for(int i=0;i<(lengthpath-1);i++) {
+					abspath=abspath+parsfilepath[i]+"/";
+				}
+				filepath=abspath+"Check.pdf";
+				filepath="/tmp/Check.pdf"; */
+				filepath="/Check1.pdf";
+				
+							
 				PdfWriter.getInstance(document, new FileOutputStream(filepath));
 			} catch (FileNotFoundException | DocumentException e) {
 				e.printStackTrace();
 			}
-						
+				
 			document.open(); 
 			
 			BaseFont times = null;
 			try {
-				times = BaseFont.createFont(fontpath, "UTF-8", BaseFont.EMBEDDED);
+				times = BaseFont.createFont("/fonts/times.ttf", "cp1251", BaseFont.EMBEDDED);
 			} catch (DocumentException | IOException e) {
 				e.printStackTrace();
 			}
 			
-			String string_pdf = "Результат выполнения работы приложения";
+			String string_pdf = "Hello! You are cool.";
 			Paragraph paragraph = new Paragraph();
 		    paragraph.add(new Paragraph(string_pdf, new Font(times,14)));
 		    
-		    String string_pdf2 = "С заказом можно ознакомиться в таблице ниже:";
+		    String string_pdf2 = "This test from Kazantsev with respect!";
 		    paragraph.add(new Paragraph(string_pdf2, new Font(times,14)));
-		    
-		     
+		
 		    try {
 				document.add(paragraph);
 			} catch (DocumentException e1) {
 				e1.printStackTrace();
 			}
-		    
-		  //îðãàíèçàöèÿ ïåðåõîäà íà ñëåäóþùóþ ñòðîêó
-			 paragraph.clear();
-			 String string_pdf3 = " ";
-			 paragraph.add(new Paragraph(string_pdf3, new Font(times,14)));
-			 
-			 try {
-					document.add(paragraph);
-				} catch (DocumentException e1) {
-					e1.printStackTrace();
-				}
-		    
-		    
-			 //îðãàíèçàöèÿ ïåðåõîäà íà ñëåäóþùóþ ñòðîêó
-			 paragraph.clear();
-			 paragraph.add(new Paragraph(string_pdf3, new Font(times,14)));
-			 
-			 try {
-					document.add(paragraph);
-				} catch (DocumentException e1) {
-					e1.printStackTrace();
-				}
 	    
 	 
 			//äîáàâëåíèå òàáëèöû
