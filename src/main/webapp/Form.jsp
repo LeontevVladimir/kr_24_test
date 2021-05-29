@@ -82,8 +82,6 @@ function myFunction5(e) {
 <p><label style="position:relative;left: 41.5%">Срочный заказ:</label>
         <input type ="checkbox" onclick="myFunction5(event);" id="checkbox_check" name="check" style="position:relative;left: 41.5%"> </p>
 	<input style="position:relative;left: 45%" type="submit" value=" Рассчитать ">
-	<input style="position:relative;left: 66%" name = "CheChe" value="${CheckCheck}">
-	<input style="position:relative;left: 66%" name = "CheChe1" value="${CheckCheck1}">
 	</form>
 	<form action="${pageContext.request.contextPath}/Spravka.jsp" method="post">
 	<input style="position:relative;left: 45%" type="submit" value=" Справка ">

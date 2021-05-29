@@ -9,7 +9,6 @@
 <form action="${pageContext.request.contextPath}/WriteFile" method="post">
 <h1 style="position:relative;text-align:center">Панель администратора</h1>
 <h3>Стоимость вида стула:</h3>
-<p>${ zalogintes }</p>
    <p>Игровой стул:
    <input name="v1" type="number" min="1" max="10000" name="NumberChair"></p>
    <p>Офисное кресло:

@@ -34,14 +34,13 @@ public class Calc extends HttpServlet {
 	public static String Summa;
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestCalc Calc = RequestCalc.fromRequestParameters(request);
-		Calc.setAsRequestAttributesAndCalculate(request);
 			if (request.getSession().getAttribute("loginUSER") == "user") {
+				RequestCalc Calc = RequestCalc.fromRequestParameters(request);
+				Calc.setAsRequestAttributesAndCalculate(request);
 			request.getRequestDispatcher("/Results.jsp").forward(request, response);
 			}
 			else {
-				request.setAttribute("zalogintes", "Пожалуйста, пройдите авторизацию");
-				response.sendRedirect(request.getContextPath() + "/");
+				request.getRequestDispatcher("/NotAuth.jsp").forward(request, response);
 			}
 		CreatePDF PDF = new CreatePDF();
 		String goals = "Hello";
