@@ -24,11 +24,11 @@ public class CreatePDF {
 	    }
 	    public void Create(String numberpdf) throws IOException {
 	      	
-	    	Document document = new Document(); //ñîçäàíèå êëàññà Document
+	    	Document document = new Document(); 
 	    	try {
-	    	filepath = new File("").getAbsolutePath();
+	    	filepath = new File("").getCanonicalPath();
 			filepath="/Check.pdf";    	
-			PdfWriter.getInstance(document, new FileOutputStream(filepath));
+			PdfWriter.getInstance(document, new FileOutputStream("Check.pdf"));
 			} catch (FileNotFoundException | DocumentException e) {
 				e.printStackTrace();
 			}
