@@ -10,11 +10,11 @@
 <body>
 <h1>Итоговая стоимость производства мягкой мебели:</h1>
 <h2>Ваши введеные данные:</h2>
-<p><strong>Вид стула: </strong>${bebem}</p>
-<p><strong>Материал каркаса:</strong>${bebem1}</p>
-<p><strong>Материал обивки:</strong>${bebem2}</p>
-<p><strong>Материал наполнителя:</strong>${bebem3}</p>
-<p><strong>Стоимость каркаса:</strong> ${bebem4}</p>
+<p><strong>Вид стула: </strong>${vidstula_result}</p>
+<p><strong>Материал каркаса:</strong>${karkas_result}</p>
+<p><strong>Материал обивки:</strong>${obivka_result}</p>
+<p><strong>Материал наполнителя:</strong>${napolnitel_result}</p>
+<p><strong>Стоимость каркаса:</strong> ${first_result}</p>
 <p><strong>Стоимость обивки:</strong> ${second_result}</p>
 <p><strong>Стоимость наполнителя:</strong> ${third_result}</p>
 <p><strong>Количество стульев:</strong> ${four_result}</p>
