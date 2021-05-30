@@ -17,15 +17,17 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 public class CreatePDF {
 	
-	public String filepath;
+	public String filepath1;
+	public String filepath2;
+	public String filepath3;
 
 	  public CreatePDF() {
 	    	
 	    }
 	    public void Create(String numberpdf) throws IOException {
             Document document = new Document(); //ñîçäàíèå êëàññà Document
-            File file = new File("Check.pdf");
-         /*    filepath = CreatePDF.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+         //   File file = new File("/app/target/tomcat.31871/webapps/expanded");
+             filepath1 = CreatePDF.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 
         	
     		File currentClass = new File(URLDecoder.decode(CreatePDF.class
@@ -34,13 +36,13 @@ public class CreatePDF {
     	                .getLocation()
     	                .getPath(), "cp1251"));
     		
-    		filepath = currentClass.getParent();
-    		File currentClass2 = new File(URLDecoder.decode(filepath, "cp1251"));
-    		filepath = currentClass2.getParent(); */
+    		filepath2 = currentClass.getParent();
+    		File currentClass2 = new File(URLDecoder.decode(filepath2, "cp1251"));
+    		filepath3 = currentClass2.getParent(); 
     			
-    		filepath="/app/target/tomcat.31871/webapps/expanded/Check.pdf";
+    		// filepath="/app/target/tomcat.31871/webapps/expanded/Check.pdf";
 			try {	
-				PdfWriter.getInstance(document, new FileOutputStream(filepath));
+				PdfWriter.getInstance(document, new FileOutputStream(filepath3));
 			} catch (FileNotFoundException | DocumentException e) {
 				e.printStackTrace();
 			}
