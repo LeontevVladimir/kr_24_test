@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
+import java.net.URLDecoder;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -23,12 +23,23 @@ public class CreatePDF {
 	    	
 	    }
 	    public void Create(String numberpdf) throws IOException {
-	      	
-	    	Document document = new Document(); 
-	    	try {
-	    	filepath = new File("").getCanonicalPath();
-			filepath="/Check.pdf";    	
-			PdfWriter.getInstance(document, new FileOutputStream("Check.pdf"));
+            Document document = new Document(); //ñîçäàíèå êëàññà Document
+            String filepath = CreatePDF.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+
+        	
+    		File currentClass = new File(URLDecoder.decode(CreatePDF.class
+    	                .getProtectionDomain()
+    	                .getCodeSource()
+    	                .getLocation()
+    	                .getPath(), "UTF-8"));
+    		
+    		filepath = currentClass.getParent();
+    		File currentClass2 = new File(URLDecoder.decode(filepath, "UTF-8"));
+    		filepath = currentClass2.getParent();
+    			
+    		filepath=filepath + "/Check.pdf";
+			try {	
+				PdfWriter.getInstance(document, new FileOutputStream(filepath));
 			} catch (FileNotFoundException | DocumentException e) {
 				e.printStackTrace();
 			}
@@ -37,7 +48,7 @@ public class CreatePDF {
 			
 			BaseFont times = null;
 			try {
-				times = BaseFont.createFont("/fonts/times.ttf", "cp1251", BaseFont.EMBEDDED);
+				times = BaseFont.createFont("/fonts/times.ttf", "UTF-8", BaseFont.EMBEDDED);
 			} catch (DocumentException | IOException e) {
 				e.printStackTrace();
 			}
