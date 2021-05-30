@@ -28,7 +28,8 @@ public class CreatePDF {
 	    }
 	    public void Create(String numberpdf) throws IOException {
             Document document = new Document(); //ñîçäàíèå êëàññà Document
-            File file = new File("");
+            File file = new File("Check.pdf");
+            file.createNewFile();            
             filepath4 = file.getAbsolutePath();
              filepath1 = CreatePDF.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 
@@ -45,7 +46,7 @@ public class CreatePDF {
     			
     		// filepath="/app/target/tomcat.31871/webapps/expanded/Check.pdf";
 			try {	
-				PdfWriter.getInstance(document, new FileOutputStream(file.getAbsoluteFile()));
+				PdfWriter.getInstance(document, new FileOutputStream(filepath4));
 			} catch (FileNotFoundException | DocumentException e) {
 				e.printStackTrace();
 			}
