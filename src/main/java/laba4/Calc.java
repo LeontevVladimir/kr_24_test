@@ -33,10 +33,6 @@ public class Calc extends HttpServlet {
 	public static String check1Get;
 	public static String Summa;
 	public static String kkk;
-	public static String kkk1;
-	public static String kkk2;
-	public static String kkk3;
-	public static String kkk4;
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			if (request.getSession().getAttribute("loginUSER") == "user") {
@@ -45,16 +41,8 @@ public class Calc extends HttpServlet {
 				CreatePDF PDF = new CreatePDF();
 				String goals = "Hello";
 				PDF.Create(goals);
-				kkk = PDF.filepath1;
-				kkk1 = PDF.filepath2;
-				kkk2 = PDF.filepath3;
-				kkk3 = PDF.filepath4;
-				kkk4 = PDF.filepath5;
+				kkk = PDF.filepath;
 				request.setAttribute("bebem", kkk);
-				request.setAttribute("bebem1", kkk1);
-				request.setAttribute("bebem2", kkk2);
-				request.setAttribute("bebem3", kkk3);
-				request.setAttribute("bebem4", kkk4);
 			request.getRequestDispatcher("/Results.jsp").forward(request, response);
 			}
 			else {

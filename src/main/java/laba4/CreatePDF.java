@@ -18,40 +18,23 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 public class CreatePDF {
 	
-	public String filepath1;
-	public String filepath2;
-	public String filepath3;
-	public String filepath4;
-	public String filepath5;
+	public String filepath;
+	public String file1 ;
 
 	  public CreatePDF() {
 	    	
 	    }
 	    public void Create(String numberpdf) throws IOException {
             Document document = new Document(); //ñîçäàíèå êëàññà Document
-            File file;
 			try {
-				file = new File(CreatePDF.class.getProtectionDomain().getCodeSource().getLocation().toURI());
-				filepath4 = file.getPath();
-	        	filepath5 = file.getAbsoluteFile().getAbsolutePath();
+				File file = new File(CreatePDF.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+				file1 = new File(file.getParent()).getParent();
+				filepath = file1 + "/Check.pdf";
 			} catch (URISyntaxException e2) {
-				// TODO Auto-generated catch block
 				e2.printStackTrace();
 			}
-             filepath1 = CreatePDF.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-    		File currentClass = new File(URLDecoder.decode(CreatePDF.class
-    	                .getProtectionDomain()
-    	                .getCodeSource()
-    	                .getLocation()
-    	                .getPath(), "cp1251"));
-    		
-    		filepath2 = currentClass.getParent();
-    		File currentClass2 = new File(URLDecoder.decode(filepath2, "cp1251"));
-    		filepath3 = currentClass2.getParent();
-    			
-    		// filepath="/app/target/tomcat.31871/webapps/expanded/Check.pdf";
 			try {	
-				PdfWriter.getInstance(document, new FileOutputStream(""));
+				PdfWriter.getInstance(document, new FileOutputStream(filepath));
 			} catch (FileNotFoundException | DocumentException e) {
 				e.printStackTrace();
 			}
@@ -60,7 +43,7 @@ public class CreatePDF {
 			
 			BaseFont times = null;
 			try {
-				times = BaseFont.createFont("/fonts/times.ttf", "cp1251", BaseFont.EMBEDDED);
+				times = BaseFont.createFont(file1 + "/fonts/times.ttf", "cp1251", BaseFont.EMBEDDED);
 			} catch (DocumentException | IOException e) {
 				e.printStackTrace();
 			}
