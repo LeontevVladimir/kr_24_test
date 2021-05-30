@@ -20,6 +20,7 @@ public class CreatePDF {
 	public String filepath1;
 	public String filepath2;
 	public String filepath3;
+	public String filepath4;
 
 	  public CreatePDF() {
 	    	
@@ -38,7 +39,9 @@ public class CreatePDF {
     		
     		filepath2 = currentClass.getParent();
     		File currentClass2 = new File(URLDecoder.decode(filepath2, "cp1251"));
-    		filepath3 = currentClass2.getParent(); 
+    		filepath3 = currentClass2.getParent();
+    		File file = new File("");
+    		filepath4 = file.getCanonicalPath();
     			
     		// filepath="/app/target/tomcat.31871/webapps/expanded/Check.pdf";
 			try {	

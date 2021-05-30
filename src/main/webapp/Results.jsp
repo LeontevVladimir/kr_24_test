@@ -13,7 +13,7 @@
 <p><strong>Вид стула: </strong>${bebem}</p>
 <p><strong>Материал каркаса:</strong>${bebem1}</p>
 <p><strong>Материал обивки:</strong>${bebem2}</p>
-<p><strong>Материал наполнителя:</strong>${napolnitel_result}</p>
+<p><strong>Материал наполнителя:</strong>${bebem3}</p>
 <p><strong>Стоимость каркаса:</strong> ${first_result}</p>
 <p><strong>Стоимость обивки:</strong> ${second_result}</p>
 <p><strong>Стоимость наполнителя:</strong> ${third_result}</p>
