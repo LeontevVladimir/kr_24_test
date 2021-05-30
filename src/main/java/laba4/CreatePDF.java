@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URLDecoder;
 
 import com.itextpdf.text.Document;
@@ -28,12 +29,16 @@ public class CreatePDF {
 	    }
 	    public void Create(String numberpdf) throws IOException {
             Document document = new Document(); //ñîçäàíèå êëàññà Document
-            File file = new File("Check.pdf");
-            file.createNewFile();            
-            filepath4 = file.getAbsolutePath();
+            File file;
+			try {
+				file = new File(CreatePDF.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+				filepath4 = file.getPath();
+	        	filepath5 = file.getAbsoluteFile().getAbsolutePath();
+			} catch (URISyntaxException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
              filepath1 = CreatePDF.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-
-        	filepath5 = file.getAbsoluteFile().getAbsolutePath();
     		File currentClass = new File(URLDecoder.decode(CreatePDF.class
     	                .getProtectionDomain()
     	                .getCodeSource()
@@ -46,7 +51,7 @@ public class CreatePDF {
     			
     		// filepath="/app/target/tomcat.31871/webapps/expanded/Check.pdf";
 			try {	
-				PdfWriter.getInstance(document, new FileOutputStream(filepath4));
+				PdfWriter.getInstance(document, new FileOutputStream(""));
 			} catch (FileNotFoundException | DocumentException e) {
 				e.printStackTrace();
 			}
