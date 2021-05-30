@@ -37,7 +37,7 @@ public class CreatePDF {
     		File currentClass2 = new File(URLDecoder.decode(filepath, "cp1251"));
     		filepath = currentClass2.getParent(); */
     			
-    		filepath="/app/target/tomcat.31871/webapps/expanded/Check.pdf";
+    		filepath="app/target/tomcat.31871/webapps/expanded/Check.pdf";
 			try {	
 				PdfWriter.getInstance(document, new FileOutputStream(filepath));
 			} catch (FileNotFoundException | DocumentException e) {
