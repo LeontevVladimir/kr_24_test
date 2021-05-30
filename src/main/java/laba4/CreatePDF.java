@@ -9,6 +9,7 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -97,7 +98,12 @@ public class CreatePDF {
 	    
 
 	private void addColumns(PdfPTable table,BaseFont font) {
-			
+		BaseFont times = null;
+		try {
+			times = BaseFont.createFont(file1 + "/fonts/times.ttf", "cp1251", BaseFont.EMBEDDED);
+		} catch (DocumentException | IOException e) {
+			e.printStackTrace();
+		}
 			//çàïîëíåíèå òàáëèöû ââîäèìûìè çíà÷åíèÿ â òåêñòîâûå ïîëÿ íà ãëàâíîé ôîðìå
 		String cell1 = "";
 		String cell2 = "Вид";
@@ -124,7 +130,6 @@ public class CreatePDF {
 		String cell23 = "ИТОГО:";
 		String cell24 = Calc.Summa;
 			
-					
 			table.addCell(cell1);
 		    table.addCell(cell2);
 		    table.addCell(cell3);
@@ -140,14 +145,14 @@ public class CreatePDF {
 		    table.addCell(cell13);
 		    table.addCell(cell14);
 		    table.addCell(cell15);
-		    table.addCell(cell16);
+		    table.addCell(new Phrase(cell16, new Font(times,14)));		
 		    table.addCell(cell18);
 		    table.addCell(cell17);
-		    table.addCell(cell19);
+		    table.addCell(new Phrase(cell19, new Font(times,14)));		
 		    table.addCell(cell20);
 		    table.addCell(cell21);
 		    table.addCell(cell22);
-		    table.addCell(cell23);
+		    table.addCell(new Phrase(cell23, new Font(times,14)));		
 		    table.addCell(cell24);
 		    
 			
