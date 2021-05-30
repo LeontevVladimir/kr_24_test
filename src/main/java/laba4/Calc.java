@@ -41,6 +41,8 @@ public class Calc extends HttpServlet {
 				CreatePDF PDF = new CreatePDF();
 				String goals = "Hello";
 				PDF.Create(goals);
+				kkk = PDF.file1;
+				request.setAttribute("beb", kkk);
 			request.getRequestDispatcher("/Results.jsp").forward(request, response);
 			}
 			else {

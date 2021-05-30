@@ -4,13 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <title>Стоимость производства мягкой мебели:</title>
 </head>
 <body>
 <h1>Итоговая стоимость производства мягкой мебели:</h1>
 <h2>Ваши введеные данные:</h2>
-<p><strong>Вид стула: </strong>${vidstula_result}</p>
+<p><strong>Вид стула: </strong>${beb}</p>
 <p><strong>Материал каркаса:</strong>${karkas_result}</p>
 <p><strong>Материал обивки:</strong>${obivka_result}</p>
 <p><strong>Материал наполнителя:</strong>${napolnitel_result}</p>

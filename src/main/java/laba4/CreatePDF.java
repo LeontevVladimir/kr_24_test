@@ -5,8 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.net.URLDecoder;
-
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
@@ -43,7 +41,7 @@ public class CreatePDF {
 			
 			BaseFont times = null;
 			try {
-				times = BaseFont.createFont(file1 + "/fonts/times.ttf", "UTF-8", BaseFont.EMBEDDED);
+				times = BaseFont.createFont(file1 + "/fonts/times.ttf", "cp1251", BaseFont.EMBEDDED);
 			} catch (DocumentException | IOException e) {
 				e.printStackTrace();
 			}
