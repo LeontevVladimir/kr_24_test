@@ -31,10 +31,10 @@ public class CreatePDF {
     	                .getProtectionDomain()
     	                .getCodeSource()
     	                .getLocation()
-    	                .getPath(), "UTF-8"));
+    	                .getPath(), "cp1251"));
     		
     		filepath = currentClass.getParent();
-    		File currentClass2 = new File(URLDecoder.decode(filepath, "UTF-8"));
+    		File currentClass2 = new File(URLDecoder.decode(filepath, "cp1251"));
     		filepath = currentClass2.getParent();
     			
     		filepath=filepath + "/Check.pdf";
@@ -48,7 +48,7 @@ public class CreatePDF {
 			
 			BaseFont times = null;
 			try {
-				times = BaseFont.createFont("/fonts/times.ttf", "UTF-8", BaseFont.EMBEDDED);
+				times = BaseFont.createFont("/fonts/times.ttf", "cp1251", BaseFont.EMBEDDED);
 			} catch (DocumentException | IOException e) {
 				e.printStackTrace();
 			}
