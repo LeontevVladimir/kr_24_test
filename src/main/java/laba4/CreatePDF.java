@@ -46,11 +46,11 @@ public class CreatePDF {
 				e.printStackTrace();
 			}
 			
-			String string_pdf = "Result";
+			String string_pdf = "Результат выполнения работы приложения";
 			Paragraph paragraph = new Paragraph();
 		    paragraph.add(new Paragraph(string_pdf, new Font(times,14)));
 		    
-		    String string_pdf2 = "Заказ:";
+		    String string_pdf2 = "С заказом можно ознакомиться в таблице ниже:";
 		    paragraph.add(new Paragraph(string_pdf2, new Font(times,14)));
 		    
 		     
@@ -100,30 +100,30 @@ public class CreatePDF {
 	private void addColumns(PdfPTable table) {
 			
 			//çàïîëíåíèå òàáëèöû ââîäèìûìè çíà÷åíèÿ â òåêñòîâûå ïîëÿ íà ãëàâíîé ôîðìå
-			String cell1 = "";
-			String cell2 = "Vid";
-			String cell3 = "Price (rub)";
-			String cell4 = "Karkas";
-			String cell5 = Calc.KarkasGet; 
-			String cell6 = Calc.KarkasGetPrice;
-			String cell7 = "Obivka";
-			String cell8 = Calc.ObivkaGet;
-			String cell9 = Calc.ObivkaGetPrice;
-			String cell10 = "Napolnitel";
-			String cell11 = Calc.NapolnitelGet;
-			String cell12 = Calc.NapolnitelGetPrice;
-			String cell13 = "Chair";
-			String cell14 = Calc.ChairGet;
-			String cell15 = Calc.ChairGetPrice;
-			String cell16 = "Number of chairs";
-			String cell17 = Calc.KolvoChairGet;
-			String cell18 = "";
-			String cell19 = "Rush order?";
-			String cell20 = Calc.check1Get;
-			String cell21 = "";
-			String cell22 = "";
-			String cell23 = "Summa:";
-			String cell24 = Calc.Summa;
+		String cell1 = "";
+		String cell2 = "Вид";
+		String cell3 = "Цена (руб)";
+		String cell4 = "Каркас";
+		String cell5 = Calc.KarkasGet; 
+		String cell6 = Calc.KarkasGetPrice;
+		String cell7 = "Обивка";
+		String cell8 = Calc.ObivkaGet;
+		String cell9 = Calc.ObivkaGetPrice;
+		String cell10 = "Наполнитель";
+		String cell11 = Calc.NapolnitelGet;
+		String cell12 = Calc.NapolnitelGetPrice;
+		String cell13 = "Стул";
+		String cell14 = Calc.ChairGet;
+		String cell15 = Calc.ChairGetPrice;
+		String cell16 = "Колличество стульев";
+		String cell17 = Calc.KolvoChairGet;
+		String cell18 = "";
+		String cell19 = "Срочный заказ?";
+		String cell20 = Calc.check1Get;
+		String cell21 = "";
+		String cell22 = "";
+		String cell23 = "ИТОГО:";
+		String cell24 = Calc.Summa;
 			
 					
 			table.addCell(cell1);
