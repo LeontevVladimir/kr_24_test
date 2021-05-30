@@ -43,7 +43,7 @@ public class CreatePDF {
 			
 			BaseFont times = null;
 			try {
-				times = BaseFont.createFont(file1 + "/fonts/times.ttf", "cp1251", BaseFont.EMBEDDED);
+				times = BaseFont.createFont(file1 + "/fonts/times.ttf", "UTF-8", BaseFont.EMBEDDED);
 			} catch (DocumentException | IOException e) {
 				e.printStackTrace();
 			}
@@ -52,7 +52,7 @@ public class CreatePDF {
 			Paragraph paragraph = new Paragraph();
 		    paragraph.add(new Paragraph(string_pdf, new Font(times,14)));
 		    
-		    String string_pdf2 = "Zakaz:";
+		    String string_pdf2 = "Заказ:";
 		    paragraph.add(new Paragraph(string_pdf2, new Font(times,14)));
 		    
 		     
