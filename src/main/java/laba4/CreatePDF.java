@@ -28,6 +28,8 @@ public class CreatePDF {
 	    public void Create(String numberpdf) throws IOException {
             Document document = new Document(); //ñîçäàíèå êëàññà Document
          //   File file = new File("/app/target/tomcat.31871/webapps/expanded");
+            File file = new File("");
+            filepath4 = file.getPath();
              filepath1 = CreatePDF.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 
         	
@@ -40,12 +42,10 @@ public class CreatePDF {
     		filepath2 = currentClass.getParent();
     		File currentClass2 = new File(URLDecoder.decode(filepath2, "cp1251"));
     		filepath3 = currentClass2.getParent();
-    		File file = new File("");
-    		filepath4 = file.getCanonicalPath();
     			
     		// filepath="/app/target/tomcat.31871/webapps/expanded/Check.pdf";
 			try {	
-				PdfWriter.getInstance(document, new FileOutputStream(filepath3));
+				PdfWriter.getInstance(document, new FileOutputStream(filepath4 + "/target/Check.pdf"));
 			} catch (FileNotFoundException | DocumentException e) {
 				e.printStackTrace();
 			}
