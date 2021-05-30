@@ -24,7 +24,7 @@ public class CreatePDF {
 	    }
 	    public void Create(String numberpdf) throws IOException {
             Document document = new Document(); //ñîçäàíèå êëàññà Document
-            String filepath = CreatePDF.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+             filepath = CreatePDF.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 
         	
     		File currentClass = new File(URLDecoder.decode(CreatePDF.class

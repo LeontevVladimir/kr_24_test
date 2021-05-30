@@ -32,20 +32,22 @@ public class Calc extends HttpServlet {
 	public static String ChairGetPrice;
 	public static String check1Get;
 	public static String Summa;
+	public static String kkk;
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			if (request.getSession().getAttribute("loginUSER") == "user") {
 				RequestCalc Calc = RequestCalc.fromRequestParameters(request);
 				Calc.setAsRequestAttributesAndCalculate(request);
+				CreatePDF PDF = new CreatePDF();
+				String goals = "Hello";
+				PDF.Create(goals);
+				kkk = PDF.filepath;
+				request.setAttribute("bebem", kkk);
 			request.getRequestDispatcher("/Results.jsp").forward(request, response);
 			}
 			else {
 				request.getRequestDispatcher("/NotAuth.jsp").forward(request, response);
 			}
-		CreatePDF PDF = new CreatePDF();
-		String goals = "Hello";
-		PDF.Create(goals);
-	
 	}
 	private static class RequestCalc {
 		private final String cenaKarkas;
