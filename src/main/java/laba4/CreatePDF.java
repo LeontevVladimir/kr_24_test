@@ -20,9 +20,6 @@ public class CreatePDF {
 	public String filepath;
 	public String file1 ;
 
-	  public CreatePDF() {
-	    	
-	    }
 	    public void Create(String numberpdf) throws IOException {
             Document document = new Document(); //ñîçäàíèå êëàññà Document
 			try {
@@ -86,7 +83,7 @@ public class CreatePDF {
 	 
 			//äîáàâëåíèå òàáëèöû
 			 PdfPTable table = new PdfPTable(3); //ñîçäàíèå òàáëèöû ñ 4 ñòîëáöàìè
-			 addColumns(table,times);
+			 addColumns(table);
 			 try {
 				document.add(table);
 			} catch (DocumentException e) {
@@ -97,7 +94,7 @@ public class CreatePDF {
 	    }
 	    
 
-	private void addColumns(PdfPTable table,BaseFont font) {
+	private void addColumns(PdfPTable table) {
 		BaseFont times = null;
 		try {
 			times = BaseFont.createFont(file1 + "/fonts/times.ttf", "cp1251", BaseFont.EMBEDDED);
@@ -129,31 +126,31 @@ public class CreatePDF {
 		String cell22 = "";
 		String cell23 = "ИТОГО:";
 		String cell24 = Calc.Summa;
-			
-			table.addCell(cell1);
-		    table.addCell(cell2);
-		    table.addCell(cell3);
-		    table.addCell(cell4);
-		    table.addCell(cell5);
-		    table.addCell(cell6);
-		    table.addCell(cell7);
-		    table.addCell(cell8);
-		    table.addCell(cell9);
-		    table.addCell(cell10);
-		    table.addCell(cell11);
-		    table.addCell(cell12);
-		    table.addCell(cell13);
-		    table.addCell(cell14);
-		    table.addCell(cell15);
-		    table.addCell(new Phrase(cell16, new Font(times,14)));		
-		    table.addCell(cell18);
-		    table.addCell(cell17);
-		    table.addCell(new Phrase(cell19, new Font(times,14)));		
-		    table.addCell(cell20);
-		    table.addCell(cell21);
-		    table.addCell(cell22);
-		    table.addCell(new Phrase(cell23, new Font(times,14)));		
-		    table.addCell(cell24);
+		
+		table.addCell(new Phrase(cell1, new Font(times,14)));	
+		table.addCell(new Phrase(cell2, new Font(times,14)));	
+		table.addCell(new Phrase(cell3, new Font(times,14)));	
+		table.addCell(new Phrase(cell4, new Font(times,14)));	
+		table.addCell(new Phrase(cell5, new Font(times,14)));	
+		table.addCell(new Phrase(cell6, new Font(times,14)));	
+		table.addCell(new Phrase(cell7, new Font(times,14)));	
+		table.addCell(new Phrase(cell8, new Font(times,14)));	
+		table.addCell(new Phrase(cell9, new Font(times,14)));	
+		table.addCell(new Phrase(cell10, new Font(times,14)));	
+		table.addCell(new Phrase(cell11, new Font(times,14)));	
+		table.addCell(new Phrase(cell12, new Font(times,14)));	
+		table.addCell(new Phrase(cell13, new Font(times,14)));	
+		table.addCell(new Phrase(cell14, new Font(times,14)));	
+		table.addCell(new Phrase(cell15, new Font(times,14)));	
+		table.addCell(new Phrase(cell16, new Font(times,14)));			
+		table.addCell(new Phrase(cell17, new Font(times,14)));	
+		table.addCell(new Phrase(cell18, new Font(times,14)));	
+		table.addCell(new Phrase(cell19, new Font(times,14)));			
+		table.addCell(new Phrase(cell20, new Font(times,14)));	
+		table.addCell(new Phrase(cell21, new Font(times,14)));	
+		table.addCell(new Phrase(cell22, new Font(times,14)));	
+		table.addCell(new Phrase(cell23, new Font(times,14)));		
+		table.addCell(new Phrase(cell24, new Font(times,14)));	
 		    
 			
 		    //âûøå äîëæåí áûòü òåêñò íà ðóññêîì ÿçûêå, êàê åãî âûâåñòè ìîæíî ïîñìîòðåòü â ñïðàâêå.
