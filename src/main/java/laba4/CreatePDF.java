@@ -85,8 +85,7 @@ public class CreatePDF {
 	 
 			//äîáàâëåíèå òàáëèöû
 			 PdfPTable table = new PdfPTable(3); //ñîçäàíèå òàáëèöû ñ 4 ñòîëáöàìè
-			 addColumns(table);
-			 
+			 addColumns(table,times);
 			 try {
 				document.add(table);
 			} catch (DocumentException e) {
@@ -97,7 +96,7 @@ public class CreatePDF {
 	    }
 	    
 
-	private void addColumns(PdfPTable table) {
+	private void addColumns(PdfPTable table,BaseFont font) {
 			
 			//çàïîëíåíèå òàáëèöû ââîäèìûìè çíà÷åíèÿ â òåêñòîâûå ïîëÿ íà ãëàâíîé ôîðìå
 		String cell1 = "";
